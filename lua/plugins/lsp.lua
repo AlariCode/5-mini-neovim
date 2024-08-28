@@ -17,7 +17,7 @@ return {
 					vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 					vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
 					vim.keymap.set("n", "<Leader>D", vim.lsp.buf.type_definition, opts)
-					vim.keymap.set("n", "<Leader>lr", vim.lsp.buf.rename, opts)
+					vim.keymap.set("n", "<Leader>lr", vim.lsp.buf.rename, { buffer = ev.buf, desc = "Rename Symbol" })
 					vim.keymap.set({ "n", "v" }, "<Leader>la", vim.lsp.buf.code_action, opts)
 					vim.keymap.set("n", "<Leader>lf", function()
 						vim.lsp.buf.format({ async = true })
